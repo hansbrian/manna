@@ -41,17 +41,23 @@
 
   var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+  var required = [
+    ["name",       "Bitte teile uns deinen Namen mit."],
+    ["email",      "Bitte eine gültige E-Mail-Adresse angeben."],
+    ["phone",      "Bitte deine Telefonnummer angeben."],
+    ["date",       "Bitte das Datum des Events angeben."],
+    ["location",   "Bitte den Ort des Events angeben."],
+    ["eventType",  "Bitte die Art des Events auswählen."],
+    ["guestCount", "Bitte die ungefähre Gästezahl angeben."]
+  ];
+
   function validate() {
     var ok = true;
-    var data = {};
-    [["name", "Bitte teile uns deinen Namen mit."],
-     ["email", "Bitte eine gültige E-Mail-Adresse angeben."],
-     ["eventType", "Bitte einen Service auswählen."],
-     ["message", "Eine kurze Notiz hilft uns bei der Vorbereitung."]].forEach(function (pair) {
+    required.forEach(function (pair) {
       var name = pair[0];
       var el = form.elements[name];
+      if (!el) return;
       var v = (el.value || "").trim();
-      data[name] = v;
       var msg = "";
       if (!v) msg = pair[1];
       else if (name === "email" && !emailRe.test(v)) msg = "Diese E-Mail-Adresse sieht nicht richtig aus.";
@@ -61,10 +67,10 @@
     return ok;
   }
 
-  // clear error on input
-  ["name", "email", "eventType", "message"].forEach(function (name) {
+  required.forEach(function (pair) {
+    var name = pair[0];
     var el = form.elements[name];
-    if (el) el.addEventListener("input", function () { setErr(name, ""); });
+    if (el) el.addEventListener("input",  function () { setErr(name, ""); });
     if (el) el.addEventListener("change", function () { setErr(name, ""); });
   });
 
@@ -85,6 +91,6 @@
   if (resetBtn) resetBtn.addEventListener("click", function () {
     form.reset();
     form.classList.remove("sent");
-    ["name", "email", "eventType", "message"].forEach(function (n) { setErr(n, ""); });
+    required.forEach(function (pair) { setErr(pair[0], ""); });
   });
 })();
