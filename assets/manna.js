@@ -27,9 +27,43 @@
     });
   });
 
+  /* ---- Mobile nav hamburger ---- */
+  var burger = document.getElementById("navBurger");
+  var overlay = document.getElementById("navOverlay");
+
+  function openNav() {
+    overlay.classList.add("open");
+    overlay.setAttribute("aria-hidden", "false");
+    burger.classList.add("open");
+    burger.setAttribute("aria-expanded", "true");
+    burger.setAttribute("aria-label", "Menü schließen");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeNav() {
+    overlay.classList.remove("open");
+    overlay.setAttribute("aria-hidden", "true");
+    burger.classList.remove("open");
+    burger.setAttribute("aria-expanded", "false");
+    burger.setAttribute("aria-label", "Menü öffnen");
+    document.body.style.overflow = "";
+  }
+
+  if (burger && overlay) {
+    burger.addEventListener("click", function () {
+      overlay.classList.contains("open") ? closeNav() : openNav();
+    });
+
+    overlay.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () { closeNav(); });
+    });
+  }
+
   /* ---- Contact form validation ---- */
   var form = document.getElementById("bookForm");
   if (!form) return;
+
+  var submitBtn = form.querySelector('[type="submit"]');
 
   function setErr(name, msg) {
     var field = form.querySelector('[data-field="' + name + '"]');
@@ -51,6 +85,22 @@
     ["guestCount", "Bitte die ungefähre Gästezahl angeben."]
   ];
 
+  function isFormValid() {
+    var ok = true;
+    required.forEach(function (pair) {
+      var el = form.elements[pair[0]];
+      if (!el) return;
+      var v = (el.value || "").trim();
+      if (!v) { ok = false; return; }
+      if (pair[0] === "email" && !emailRe.test(v)) ok = false;
+    });
+    return ok;
+  }
+
+  function updateSubmitBtn() {
+    if (submitBtn) submitBtn.disabled = !isFormValid();
+  }
+
   function validate() {
     var ok = true;
     required.forEach(function (pair) {
@@ -67,11 +117,13 @@
     return ok;
   }
 
+  updateSubmitBtn();
+
   required.forEach(function (pair) {
     var name = pair[0];
     var el = form.elements[name];
-    if (el) el.addEventListener("input",  function () { setErr(name, ""); });
-    if (el) el.addEventListener("change", function () { setErr(name, ""); });
+    if (el) el.addEventListener("input",  function () { setErr(name, ""); updateSubmitBtn(); });
+    if (el) el.addEventListener("change", function () { setErr(name, ""); updateSubmitBtn(); });
   });
 
   form.addEventListener("submit", function (ev) {
@@ -92,5 +144,6 @@
     form.reset();
     form.classList.remove("sent");
     required.forEach(function (pair) { setErr(pair[0], ""); });
+    updateSubmitBtn();
   });
 })();
