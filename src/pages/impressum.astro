@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="de">
   <head>
@@ -10,23 +12,24 @@
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/manna.css" />
+    <link rel="stylesheet" href="/manna.css" />
+    <link rel="icon" type="image/svg+xml" href="/images/manna_favicon.svg" />
   </head>
   <body>
     <!-- ===================== NAV ===================== -->
     <header class="nav">
       <div class="wrap nav__inner">
-        <a href="index.html" class="logo" aria-label="Manna Startseite">
-          <img src="./assets/manna_schwarz.svg" alt="Manna" />
+        <a href="/" class="logo" aria-label="Manna Startseite">
+          <img src="/images/manna_schwarz.svg" alt="Manna" />
         </a>
         <nav class="nav__links">
-          <a href="index.html#services">Events</a>
-          <a href="index.html#benefits">Warum MANNA</a>
-          <a href="index.html#about">Über mich</a>
-          <a href="index.html#contact">Anfragen</a>
+          <a href="/#services">Events</a>
+          <a href="/#benefits">Warum MANNA</a>
+          <a href="/#about">Über mich</a>
+          <a href="/#contact">Anfragen</a>
         </nav>
         <div class="nav__cta">
-          <a href="index.html#contact" class="btn btn--red">Event anfragen</a>
+          <a href="/#contact" class="btn btn--red">Event anfragen</a>
         </div>
         <button
           class="nav__burger"
@@ -44,11 +47,11 @@
     <!-- Mobile nav overlay -->
     <div class="nav-overlay" id="navOverlay" aria-hidden="true">
       <div class="nav-overlay__inner">
-        <a href="index.html#services" class="nav-overlay__link">Events</a>
-        <a href="index.html#benefits" class="nav-overlay__link">Warum MANNA</a>
-        <a href="index.html#about" class="nav-overlay__link">Über mich</a>
-        <a href="index.html#contact" class="nav-overlay__link">Kontakt</a>
-        <a href="index.html#contact" class="btn btn--red nav-overlay__cta"
+        <a href="/#services" class="nav-overlay__link">Events</a>
+        <a href="/#benefits" class="nav-overlay__link">Warum MANNA</a>
+        <a href="/#about" class="nav-overlay__link">Über mich</a>
+        <a href="/#contact" class="nav-overlay__link">Kontakt</a>
+        <a href="/#contact" class="btn btn--red nav-overlay__cta"
           >Event anfragen <span class="arrow">→</span></a
         >
       </div>
@@ -58,7 +61,7 @@
     <section class="legal-page">
       <div class="wrap">
         <div class="legal-page__inner">
-          <a href="index.html" class="legal-back">← Zurück zur Startseite</a>
+          <a href="/" class="legal-back">← Zurück zur Startseite</a>
           <h1>Impressum</h1>
 
           <h2>Angaben gemäß § 5 TMG</h2>
@@ -146,7 +149,7 @@
         <div class="footer__top">
           <div class="footer__brand">
             <div class="logo">
-              <img src="./assets/manna_schwarz.svg" alt="Manna" />
+              <img src="/images/manna_schwarz.svg" alt="Manna" />
             </div>
             <p class="footer__tag">
               Für Events, die mehr als Standard verdienen.
@@ -155,25 +158,25 @@
           <div class="footer__col">
             <h5>Angebote</h5>
             <ul>
-              <li><a href="index.html#services">Hochzeiten</a></li>
-              <li><a href="index.html#services">Events</a></li>
-              <li><a href="index.html#contact">Event anfragen</a></li>
+              <li><a href="/#services">Hochzeiten</a></li>
+              <li><a href="/#services">Events</a></li>
+              <li><a href="/#contact">Event anfragen</a></li>
             </ul>
           </div>
           <div class="footer__col">
             <h5>Unternehmen</h5>
             <ul>
-              <li><a href="index.html#about">Über uns</a></li>
-              <li><a href="index.html#benefits">Vorteile</a></li>
-              <li><a href="index.html#contact">Kontakt</a></li>
+              <li><a href="/#about">Über uns</a></li>
+              <li><a href="/#benefits">Vorteile</a></li>
+              <li><a href="/#contact">Kontakt</a></li>
             </ul>
           </div>
         </div>
         <div class="footer__bottom">
           <div>© 2026 Manna Coffee. Alle Rechte vorbehalten.</div>
           <div class="footer__legal">
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
+            <a href="/impressum">Impressum</a>
+            <a href="/datenschutz">Datenschutz</a>
           </div>
           <div class="footer__social">
             <a href="#" aria-label="Instagram">IG</a>
@@ -183,6 +186,6 @@
       </div>
     </footer>
 
-    <script src="./assets/manna.js"></script>
+    <script src="/manna.js" is:inline></script>
   </body>
 </html>

@@ -1,3 +1,5 @@
+---
+---
 <!doctype html>
 <html lang="de">
   <head>
@@ -10,7 +12,8 @@
       href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/manna.css" />
+    <link rel="stylesheet" href="/manna.css" />
+    <link rel="icon" type="image/svg+xml" href="/images/manna_favicon.svg" />
   </head>
   <body>
 
@@ -18,7 +21,7 @@
     <header class="nav">
       <div class="wrap nav__inner">
         <a href="#top" class="logo" aria-label="Manna Startseite">
-          <img src="./assets/manna_schwarz.svg" alt="Manna" />
+          <img src="/images/manna_schwarz.svg" alt="Manna" />
         </a>
         <nav class="nav__links">
           <a href="#services">Events</a>
@@ -72,7 +75,7 @@
           <div class="hero__img">
             <img
               class="hero__coffee"
-              src="./assets/coffee.jpg"
+              src="/images/coffee.jpg"
               alt="Kaffee"
             />
           </div>
@@ -86,12 +89,12 @@
         <span
           >Guter Kaffee <i class="sep">✦</i> Gute Gespräche
           <i class="sep">✦</i> Mobile Kaffeebar <i class="sep">✦</i> In Halle geröstet <i class="sep">✦</i> Private Events <i class="sep">✦</i> Business Events
-          <i class="sep">✦</i> Pop Up Events <i class="sep">✦</i> Matcha auf Wunsch <i class="sep">✦</i>Ein Ort zum Ankommen<i class="sep">✦</i> <i class="sep">Momente, die bleiben</i> </span
+          <i class="sep">✦</i> Pop Up Events <i class="sep">✦</i> Matcha auf Wunsch <i class="sep">✦</i>Ein Ort zum Ankommen<i class="sep">✦</i> Momente, die bleiben <i class="sep">✦</i> </span
         >
         <span
           >Guter Kaffee <i class="sep">✦</i> Gute Gespräche
           <i class="sep">✦</i> Mobile Kaffeebar <i class="sep">✦</i> In Halle geröstet <i class="sep">✦</i> Private Events <i class="sep">✦</i> Business Events
-          <i class="sep">✦</i> Pop Up Events <i class="sep">✦</i> Matcha auf Wunsch <i class="sep">✦</i>Ein Ort zum Ankommen<i class="sep">✦</i> <i class="sep">Momente, die bleiben</i> </span
+          <i class="sep">✦</i> Pop Up Events <i class="sep">✦</i> Matcha auf Wunsch <i class="sep">✦</i>Ein Ort zum Ankommen<i class="sep">✦</i>Momente, die bleiben <i class="sep">✦</i> </span
         >
       </div>
     </div>
@@ -107,7 +110,7 @@
         <div class="services-v2">
           <article class="svc-min reveal">
             <div class="svc-min__img">
-              <img src="./assets/private_event.jpg" alt="Siebträgermaschine mit Barista" />
+              <img src="/images/private_event.jpg" alt="Siebträgermaschine mit Barista" />
             </div>
             <div class="svc-min__body">
               <h3 class="svc-min__title">Private Events</h3>
@@ -120,7 +123,7 @@
 
           <article class="svc-min reveal d1">
             <div class="svc-min__img">
-              <img src="./assets/corporate_event_2.jpg" alt="Frau trinkt Kaffee und lacht" />
+              <img src="/images/corporate_event_2.jpg" alt="Frau trinkt Kaffee und lacht" />
             </div>
             <div class="svc-min__body">
               <h3 class="svc-min__title">Business Events</h3>
@@ -134,7 +137,7 @@ MANNA sorgt für professionellen Kaffee Service, der Gäste anzieht, Gespräche 
 
           <article class="svc-min reveal d2">
             <div class="svc-min__img">
-              <img src="./assets/coffee_2.jpg" alt="Latte Art in To Go Becher" />
+              <img src="/images/coffee_2.jpg" alt="Latte Art in To Go Becher" />
             </div>
             <div class="svc-min__body">
               <h3 class="svc-min__title">Pop Up Events</h3>
@@ -151,7 +154,7 @@ MANNA schafft einen temporären Coffee Spot, der Aufmerksamkeit erzeugt und Atmo
           <p class="services-note__text">
             <b>Immer dabei: </b> Mobile Kaffeebar, professioneller Barista Service, hochwertiger Kaffee, Milch und Haferdrink, Equipment sowie Aufbau und Abbau. <br> <br>
             <b>Optional buchbar: </b> Matcha Bar Upgrade mit Matcha Latte, Iced Matcha und saisonalen Specials.
-            
+
           </p>
           <a href="#contact" class="btn btn--red">
             Event anfragen <span class="arrow">→</span>
@@ -182,7 +185,7 @@ MANNA schafft einen temporären Coffee Spot, der Aufmerksamkeit erzeugt und Atmo
             </div>
             <h3 class="bcard__title">Richtig guter Kaffee</h3>
             <p class="bcard__desc">
-             
+
 Frisch zubereitet, hochwertig im Geschmack und bewusst reduziert auf das, was wirklich überzeugt. Unser Kaffee kommt von Hallunken, einer lokalen Rösterei aus Halle.
 
             </p>
@@ -237,7 +240,7 @@ Frisch zubereitet, hochwertig im Geschmack und bewusst reduziert auf das, was wi
       <div class="wrap">
         <div class="about__grid">
           <div class="about__img-wrap reveal">
-            <img class="about__img" src="./assets/benedikt.jpg" alt="Benedikt">
+            <img class="about__img" src="/images/benedikt.jpg" alt="Benedikt">
           </div>
 
           <div class="reveal d1">
@@ -269,8 +272,14 @@ Frisch zubereitet, hochwertig im Geschmack und bewusst reduziert auf das, was wi
         </div>
 
         <div class="reveal d1">
+          <div id="formError" style="display:none; background:#fff; border:2.5px solid var(--red); border-radius:var(--r-btn); padding:14px 18px; margin-bottom:18px; color:var(--red-ink); font-weight:700;">
+            Es gab einen Fehler beim Senden deiner Anfrage. Bitte überprüfe deine Angaben und versuche es erneut.
+          </div>
           <form class="form" id="bookForm" novalidate>
             <div class="form__fields">
+
+              <!-- Honeypot — hidden from real visitors -->
+              <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0;" />
 
               <!-- Name + E-Mail -->
               <div class="form__row">
@@ -402,9 +411,9 @@ Frisch zubereitet, hochwertig im Geschmack und bewusst reduziert auf das, was wi
                   <path d="M4 12.5l5 5L20 6.5" />
                 </svg>
               </div>
-              <h3>Anfrage gesendet<span id="successName"></span>!</h3>
+              <h3 id="successHeading">Anfrage gesendet!</h3>
               <p>Ich habe deine Angaben erhalten und melde mich innerhalb von 24h mit einer ersten Einschätzung.</p>
-              <button type="button" class="btn btn--ghost" id="formReset">Weitere Anfrage</button>
+              <a href="/" class="btn btn--ghost" id="formReset">Weitere Anfrage</a>
             </div>
           </form>
         </div>
@@ -417,7 +426,7 @@ Frisch zubereitet, hochwertig im Geschmack und bewusst reduziert auf das, was wi
         <div class="footer__top">
           <div class="footer__brand">
             <div class="logo">
-              <img src="./assets/manna_schwarz.svg" alt="Manna" />
+              <img src="/images/manna_schwarz.svg" alt="Manna" />
             </div>
             <p class="footer__tag">
               Für Events, die mehr als Standard verdienen.
@@ -443,8 +452,8 @@ Frisch zubereitet, hochwertig im Geschmack und bewusst reduziert auf das, was wi
         <div class="footer__bottom">
           <div>© 2026 MANNA</div>
           <div class="footer__legal">
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
+            <a href="/impressum">Impressum</a>
+            <a href="/datenschutz">Datenschutz</a>
           </div>
           <div class="footer__social">
             <a href="#" aria-label="Instagram">IG</a>
@@ -454,6 +463,6 @@ Frisch zubereitet, hochwertig im Geschmack und bewusst reduziert auf das, was wi
       </div>
     </footer>
 
-    <script src="./assets/manna.js"></script>
+    <script src="/manna.js" is:inline></script>
   </body>
 </html>

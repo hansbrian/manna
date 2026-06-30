@@ -1,0 +1,21 @@
+services:
+  dev:
+    build:
+      context: .
+      target: builder
+    ports:
+      - "3000:3000"
+    env_file: .env
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+    command: npm run dev
+
+  prod:
+    build: .
+    ports:
+      - "3000:3000"
+    env_file: .env
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000

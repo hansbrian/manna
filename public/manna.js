@@ -64,6 +64,7 @@
   if (!form) return;
 
   var submitBtn = form.querySelector('[type="submit"]');
+  var originalBtnHtml = submitBtn ? submitBtn.innerHTML : "";
 
   function setErr(name, msg) {
     var field = form.querySelector('[data-field="' + name + '"]');
@@ -126,6 +127,7 @@
     if (el) el.addEventListener("change", function () { setErr(name, ""); updateSubmitBtn(); });
   });
 
+  /* On submit: validate client-side; if valid send via fetch */
   form.addEventListener("submit", function (ev) {
     ev.preventDefault();
     if (!validate()) {
@@ -133,17 +135,33 @@
       if (firstErr) firstErr.focus();
       return;
     }
-    form.classList.add("sent");
-    var nameVal = (form.elements.name.value || "").trim().split(" ")[0];
-    var hi = document.getElementById("successName");
-    if (hi && nameVal) hi.textContent = ", " + nameVal;
-  });
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Wird gesendet…";
+    }
 
-  var resetBtn = document.getElementById("formReset");
-  if (resetBtn) resetBtn.addEventListener("click", function () {
-    form.reset();
-    form.classList.remove("sent");
-    required.forEach(function (pair) { setErr(pair[0], ""); });
-    updateSubmitBtn();
+    var errDiv = document.getElementById("formError");
+
+    function onError() {
+      if (errDiv) errDiv.style.display = "";
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+        updateSubmitBtn();
+      }
+    }
+
+    fetch("/api/contact", { method: "POST", body: new FormData(form) })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.success) {
+          var heading = document.getElementById("successHeading");
+          if (heading && data.name) heading.textContent = "Anfrage gesendet, " + data.name + "!";
+          form.classList.add("sent");
+        } else {
+          onError();
+        }
+      })
+      .catch(onError);
   });
 })();
