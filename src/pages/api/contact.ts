@@ -91,7 +91,7 @@ export const POST: APIRoute = async ({ request }) => {
   `;
 
   const ownerResult = await resend.emails.send({
-    from: "MANNA <noreply@domain.com>",
+    from: "MANNA <hallo@manna-kaffeebar.de>",
     to: ownerEmail,
     subject: `Neue Eventanfrage von ${name}`,
     html: ownerHtml,
@@ -102,7 +102,7 @@ export const POST: APIRoute = async ({ request }) => {
   }
 
   const confirmResult = await resend.emails.send({
-    from: "MANNA <noreply@domain.com>",
+    from: "MANNA <hallo@manna-kaffeebar.de>",
     to: email,
     subject: "Deine Anfrage bei MANNA",
     html: confirmHtml,
